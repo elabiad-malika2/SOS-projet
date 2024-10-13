@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f8f5;
+
+}
+.parent{
+    margin: 0 40px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.parent h1{
+    color: #333;
+}
+.parent .question{
+    background: #fff;
+    padding: 10px 20px 20px;
+    box-shadow: 0 15px 25px rgb(0, 0, 0,0.05);
+    border-radius: 5px;
+    
+}
+.parent input{
+    appearance: none;
+}
+.parent .question label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.parent .question label::after{
+    content: '+';
+    position: absolute;
+    right: 450px;
+    font-size: 2em;
+    color:  rgb(0, 0, 0,0.1);
+    transition: transfrom 1s;
+}
+.parent .question:hover label::after{
+    color: #333;
+}
+.parent .question input:checked ~ label::after{
+    transform: rotate(135deg);
+}
+.parent h2{
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f8f5;
+    font-size: 1.5em;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.parent h3{
+    position: relative;
+    font-weight: 500;
+    color: #333;
+
+}
+.content{
+    max-height: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+input:checked ~ .content{
+    max-height: 100vh;
+}
+.content p{
+    position: relative;
+    padding: 10px 0;
+    color: #333;
+}
